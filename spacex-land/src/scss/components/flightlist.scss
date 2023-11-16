@@ -1,0 +1,21 @@
+.flightlist {
+    width: 100%;
+}
+.flightlist__item {
+    width: 33%;
+    background-color: $purple-active;
+    padding: 20px;
+    border-radius: 10px;
+}
+.flightlist__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.flightlist__item {
+    background-color: $purple-active;
+    width: 25%;
+    // margin-bottom: 20px;
+    margin: 20px 50px;
+}

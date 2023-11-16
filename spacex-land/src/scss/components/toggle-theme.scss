@@ -1,0 +1,30 @@
+.toggle__holder {
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle__icon {
+    width: 25px;
+    height: 25px;
+}
+.toggle__theme {
+    background-color: $purple-active;
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    border: none;
+    margin: 0 10px;
+    padding: 3px;
+}
+.toggle__ring {
+    background-color: $white;
+    display: block;
+    height: 100%;
+    width: 15px;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+.toggle__ring--active {
+    transform: translateX(120%);
+}

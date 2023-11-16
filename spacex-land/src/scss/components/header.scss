@@ -1,22 +1,16 @@
 .header {
     background-color: $gray-3;
     height: 80px;
+    .wrap {
+        height: 100%;
+    }
 }
 .header__container {
-    margin: auto;
     height: 100%;
-    max-width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .header__title {
    color: $purple-active;
-}
-.header__toggle-theme {
-    background-color: $purple-active;
-    color: $white;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
 }
