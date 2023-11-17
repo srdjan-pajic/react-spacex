@@ -1,0 +1,11 @@
+.flight-details {
+    padding-top: 50px;
+}
+.flight-details__title {
+    margin-bottom: 20px;
+}
+.flight-details__error {
+    background-color: $red;
+    font-size: 30px;
+    text-align: center;
+}
