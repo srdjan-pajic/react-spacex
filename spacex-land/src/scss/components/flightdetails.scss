@@ -1,5 +1,16 @@
 .flight-details {
-    padding-top: 50px;
+    margin: 0 auto;
+    .wrap {
+        padding: 20px;
+    }
+    @include media-breakpoint-up(lg) {
+        padding-top: 50px;
+        max-width: 50%;
+    }
+    @include media-breakpoint-only(md) {
+        padding-top: 50px;
+        max-width: 70%;
+    }
 }
 .flight-details__title {
     margin-bottom: 20px;
@@ -8,4 +19,57 @@
     background-color: $red;
     font-size: 30px;
     text-align: center;
+}
+.flight-details__holder {
+    background-color: rgba($yellow-hover, 0.28);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+.flight-details__heading {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+.flight-details__image {
+    max-width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.flight-details__text {
+    margin-bottom: 20px;
+}
+.flight-details__number {
+     margin-bottom: 10px;
+    .bold {
+        font-weight: 700;
+    }
+}
+.flight-details__name {
+     margin-bottom: 10px;
+    .bold {
+        font-weight: 700;
+    }
+}
+.flight-details__date {
+     margin-bottom: 10px;
+    .bold {
+        font-weight: 700;
+    }
+}
+.flight-details__link {
+    display: block;
+    font-size: 16px;
+    color: $blue;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+}
+.flight-details__back {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: $purple-active;
+    color: $white;
+    padding: 10px;
+    border-radius: 8px;
 }

@@ -14,6 +14,18 @@ body {
   font-weight: 400;
   color: $black;
 }
+.root {
+  width: 100%;
+}
+.app {
+  width: 100%;
+}
+.content {
+  width: 100%;
+}
+.homepage {
+  width: 100%;
+}
 
 .hidden {
   display: none;
@@ -22,4 +34,5 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 20px;
+  width: 100%;
 }

@@ -15,7 +15,7 @@ const FlightList = ({ flights }) => {
                         <p className="flightlist__details">{flight.details}</p>
                         <span className="flightlist__date">{flight.date_utc}</span>
                         <span className="flightlist__date">{flight.flight_number}</span>
-                        <Link to={`/flights/:${flight.id}`} className="flightlist__link">More Details</Link>
+                        <Link to={`/flights/${flight.id}`} className="flightlist__link">More Details</Link>
                     </div>
                 ))}
             </div>

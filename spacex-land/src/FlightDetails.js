@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const FlightDetails = () => {
@@ -11,9 +11,16 @@ const FlightDetails = () => {
                 {isPending && <p>Loading...</p>}
                 {error && <div className="flight-details__error">{error}</div>}
                 {flight && (
-                    <div>
-                        <h2 className="flight-details__title">{flight.name}</h2>
-                        <img src={flight.links.patch.small} alt="" />
+                    <div className="flight-details__holder">
+                        <h2 className="flight-details__heading">{flight.name}</h2>
+                        <img className="flight-details__image" src={flight.links.patch.large} alt="Image" />
+                        <p className="flight-details__text details-text">{flight.details}</p>
+                        <p className="flight-details__number details-text"><span className="bold">Flight number:</span> {flight.flight_number}</p>
+                        <p className="flight-details__name details-text"><span className="bold">Name of rocket:</span> {flight.name}</p>
+                        <p className="flight-details__date details-text"><span className="bold">Flight date:</span> {flight.date_utc}</p>
+                        <Link to={'https://spaceflightnow.com/2020/03/07/late-night-launch-of-spacex-cargo-ship-marks-end-of-an-era/'} className="flight-details__link">{flight.links.article}</Link>
+                        <Link to={'https://en.wikipedia.org/wiki/SpaceX_CRS-20'} className="flight-details__link">{flight.links.wikipedia}</Link>
+                        <Link className="flight-details__back" to={'/'}>&#8592; Back to Flight List</Link>
                     </div>
                 )}
             </div>
