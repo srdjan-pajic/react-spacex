@@ -1,4 +1,3 @@
-import { useState } from "react";
 import FlightList from "./FlightList";
 import useFetch from "./useFetch";
 
@@ -10,11 +9,8 @@ const Homepage = () => {
                 {isPending && <p>Loading....</p>}
                 {error && <p>{error}</p>}
                 {flights && <FlightList flights={flights} />}
-
-
             </div>
         </div>
     );
 }
-
 export default Homepage;
