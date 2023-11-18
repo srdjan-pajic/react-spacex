@@ -1,4 +1,5 @@
 import FlightList from "./FlightList";
+import Loader from "./Loader";
 import useFetch from "./useFetch";
 
 const Homepage = () => {
@@ -6,7 +7,7 @@ const Homepage = () => {
     return (
         <div className="homepage">
             <div className="wrap">
-                {isPending && <p>Loading....</p>}
+                {isPending && <Loader />}
                 {error && <p>{error}</p>}
                 {flights && <FlightList flights={flights} />}
             </div>
