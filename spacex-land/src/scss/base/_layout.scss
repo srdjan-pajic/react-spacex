@@ -2,38 +2,95 @@
 // ------------------------------------------------------------------------------
 @import './variables';
 html {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 body {
-  height: 100%;
-  width: 100%;
-  // font-family: $font-default;
-  font-size: 14px;
-  font-weight: 400;
-  color: $black;
+	height: 100%;
+	width: 100%;
+	// font-family: $font-default;
+	font-size: 14px;
+	font-weight: 400;
+	color: $black;
 }
 .root {
-  width: 100%;
+	width: 100%;
 }
 .app {
-  width: 100%;
-  overflow: hidden;
+	width: 100%;
+	overflow: hidden;
 }
 .content {
-  width: 100%;
+	width: 100%;
 }
 .homepage {
-  width: 100%;
+	width: 100%;
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 .wrap {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 20px;
-  width: 100%;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 0 20px;
+	width: 100%;
+}
+.light {
+	background-color: $white;
+	.toggle__ring {
+		transform: translateX(120%);
+	}
+}
+.dark {
+	background-color: $night;
+	h1 {
+		color: $white;
+	}
+	.header {
+		background-color: $purple-active;
+		.header__title {
+			color: $white;
+		}
+	}
+	.toggle__theme{
+		background-color: $white;
+		.toggle__ring {
+			background-color: $purple-active;
+		}
+	}
+	.search__input {
+		background-color: $purple-hover;
+		color: $white;
+		&::placeholder {
+			color: $white;
+		}
+	}
+	.flightlist__item {
+		background: linear-gradient(0deg, $purple-primary 0%, $purple-bg 100%);
+	}
+	.flightlist__name,
+	.flightlist__details,
+	.flightlist__date {
+		color: $white;
+	}
+	.flightlist__link,
+	.flight-details__back {
+		background-color: $white;
+		color: $purple-active;
+	}
+	.loader__text {
+		color: $white;
+	}
+	.loader__line {
+		border: 10px solid $white;
+		border-top: 10px solid $purple-active;
+	}
+	.flight-details__title,
+	.flight-details__heading,
+	.details-text {
+		color: $white;
+	}
+	
 }
