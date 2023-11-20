@@ -13,7 +13,7 @@ const FlightDetails = () => {
                 {flight && (
                     <div className="flight-details__holder">
                         <h2 className="flight-details__heading">{flight.name}</h2>
-                        <img className="flight-details__image" src={flight.links.patch.large} alt="Image" />
+                        <img className="flight-details__image" src={flight.links.patch.large} alt="Flight details sign" />
                         <p className="flight-details__text details-text">{flight.details}</p>
                         <p className="flight-details__number details-text"><span className="bold">Flight number:</span> {flight.flight_number}</p>
                         <p className="flight-details__name details-text"><span className="bold">Name of rocket:</span> {flight.name}</p>

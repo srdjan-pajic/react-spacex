@@ -1,0 +1,32 @@
+.popup-cloud {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    padding: 30px;
+    background-color: $purple-hover;
+    border-radius: 70px;
+    max-width: 280px;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: $purple-hover;
+        width: 110px;
+        height: 150px;
+        border-radius: 60px;
+        z-index: 0;
+    }
+    &::before {
+        top: -19px;
+        left: 45px;
+    }
+    &::after {
+        bottom: -17px;
+        right: 45px;
+    }
+}
+.popup-cloud__text {
+    color: $white;
+    z-index: 1;
+    position: relative;
+}

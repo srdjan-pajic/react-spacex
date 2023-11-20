@@ -37,7 +37,7 @@ const FlightList = ({ flights }) => {
                 {displayFlights.map((flight) => (
                     <div className="flightlist__item" key={flight.id}>
                         <div className="flightlist__image-holder">
-                            <img className="flightlist__image" src={flight.links.patch.small} alt="Alt text" />
+                            <img className="flightlist__image" src={flight.links.patch.small} alt="Flight item" />
                         </div>
                         <h3 className="flightlist__name">{flight.name}</h3>
                         <p className="flightlist__details">{flight.details}</p>

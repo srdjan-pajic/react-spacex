@@ -1,7 +1,6 @@
 import React from "react";
 
 const ToggleTheme = ({ switchTheme, theme }) => {
-    console.log(theme);
     return (
         <div className="toggle__holder">
             <img className="toggle__icon" src="../moon.svg" alt="img" />

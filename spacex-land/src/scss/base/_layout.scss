@@ -1,6 +1,7 @@
 // ----------  layout
 // ------------------------------------------------------------------------------
 @import './variables';
+@import './mixins';
 html {
 	height: 100%;
 	width: 100%;
@@ -42,33 +43,47 @@ body {
 	.toggle__ring {
 		transform: translateX(120%);
 	}
+	.flightlist__item {
+		@include media-breakpoint-up(lg) {
+			&:hover {
+				box-shadow: 0px 0px 7px 3px rgba(88, 88, 88, 0.45);
+			}
+		}
+	}
 }
 .dark {
-	background-color: $night;
+	background-color: $black-2;
 	h1 {
 		color: $white;
 	}
 	.header {
-		background-color: $purple-active;
+		background-color: $dark-gray;
+		box-shadow: 0px 1px 10px 1px rgba($green-2,0.75);
 		.header__title {
 			color: $white;
 		}
 	}
 	.toggle__theme{
-		background-color: $white;
+		background-color: $green-2;
 		.toggle__ring {
-			background-color: $purple-active;
+			background-color: $white;
 		}
 	}
 	.search__input {
-		background-color: $purple-hover;
-		color: $white;
+		background-color: $green-2;
+		color: $black-2;
 		&::placeholder {
-			color: $white;
+			color: $black-2;
 		}
 	}
 	.flightlist__item {
-		background: linear-gradient(0deg, $purple-primary 0%, $purple-bg 100%);
+		background-color: $dark-gray;
+		box-shadow: 0px 0px 5px 1px rgba($green-2, 0.7);
+		@include media-breakpoint-up(lg) {
+			&:hover {
+				box-shadow: 0px 0px 7px 3px rgba($green-2, 0.5);
+			}
+		}
 	}
 	.flightlist__name,
 	.flightlist__details,
@@ -77,20 +92,27 @@ body {
 	}
 	.flightlist__link,
 	.flight-details__back {
-		background-color: $white;
-		color: $purple-active;
+		background-color: $green-2;
+		color: $black-2;
 	}
 	.loader__text {
 		color: $white;
 	}
 	.loader__line {
 		border: 10px solid $white;
-		border-top: 10px solid $purple-active;
+		border-top: 10px solid $green-2;
+	}
+	.flight-details__holder {
+		background-color: $dark-gray;
+		box-shadow: 0px 0px 5px 1px rgba($green-2, 0.7);
 	}
 	.flight-details__title,
 	.flight-details__heading,
 	.details-text {
 		color: $white;
+	}
+	.flight-details__link {
+		color: $green-2;
 	}
 	
 }
