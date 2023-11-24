@@ -15,8 +15,9 @@ body {
 	font-weight: 400;
 	color: $black;
 }
-.root {
+#root {
 	width: 100%;
+	overflow: hidden;
 }
 .app {
 	width: 100%;

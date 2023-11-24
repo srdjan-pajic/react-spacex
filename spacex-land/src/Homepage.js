@@ -1,15 +1,17 @@
-import FlightList from "./FlightList";
-import Loader from "./Loader";
-import useFetch from "./useFetch";
+// import FlightList from "./FlightList";
+// import useFetch from "./useFetch";
+// import Loader from "./Loader";
+import FlightList2 from "./FlightList2";
 
 const Homepage = () => {
-    const { data: flights, isPending, error } = useFetch('https://api.spacexdata.com/v5/launches');
+    // const { data: flights, isPending, error } = useFetch('https://api.spacexdata.com/v3/launches?limit=18&offset=0');
     return (
         <div className="homepage">
             <div className="wrap">
-                {isPending && <Loader />}
+                <FlightList2 />
+                {/* {isPending && <Loader />}
                 {error && <p>{error}</p>}
-                {flights && <FlightList flights={flights} />}
+                {flights && <FlightList flights={flights} />} */}
             </div>
         </div>
     );

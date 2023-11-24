@@ -1,45 +1,47 @@
 import { Link } from "react-router-dom";
-import Search from "./Search";
 import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import useFetch from "./useFetch";
 import Loader from "./Loader";
-import PopupCloud from "./PopupCloud";
+import myImage from './images/logo192.png';
+import Search from "./Search";
 
-const FlightList = ({ flights }) => {
-    const [search, setSearch] = useState('');
-    const [page, setPage] = useState(1);
-    const [showLoader, setShowLoader] = useState(false);
-    const itemsPerPage = 18;
+const FlightList2 = () => {
 
-    const filteredFlights = flights.filter((flight) => {
-        return search.toLowerCase() === ''
-            ? flight : flight.name.toLowerCase().includes(search);
-    });
-    const displayFlights = filteredFlights.slice(0, page * itemsPerPage);
+    const [offset, setOffset] = useState(0);
+    const limit = 18;
 
-    const handleFetchData = () => {
-        setShowLoader(true);
-        setTimeout(() => {
-            setPage(page + 1);
-            setShowLoader(false);
-        }, 2000);
+    const { data, isPending, error } = useFetch(`https://api.spacexdata.com/v3/launches?limit=${limit}&offset=${offset}`, offset);
+    const [launches, setLaunches] = useState([]);
+
+    const handleFetchMore = () => {
+        setOffset(prevOffset => prevOffset + limit);
     };
+
+    useEffect(() => {
+        if (data) {
+            if (!launches.length || launches[0].flight_number !== data[0].flight_number) {
+                setLaunches(prev => [...prev, ...data]);
+            }
+        }
+    }, [data]);
 
     return (
         <div className="flightlist">
-            <Search onSearch={setSearch} />
+            <Search />
             <h1>Flights List</h1>
             <InfiniteScroll
-                dataLength={displayFlights.length}
-                next={handleFetchData}
-                hasMore={displayFlights.length < filteredFlights.length}
+                dataLength={launches && launches.length}
+                next={handleFetchMore}
+                hasMore={launches && launches.length < 107}
                 className="flightlist__container"
+                loader={<Loader />}
             >
-                {displayFlights.map((flight) => (
+                {launches && launches.map((flight) => (
                     <div className="flightlist__item" key={flight.flight_number}>
                         <div className="flightlist__item-top">
                             <div className="flightlist__image-holder">
-                                <img className="flightlist__image" src={flight.links.mission_patch_small} alt="Flight item" />
+                                <img className="flightlist__image" src={flight.links.mission_patch_small === null ? myImage : flight.links.mission_patch_small} alt="Flight item" />
                             </div>
                             <h3 className="flightlist__name">{flight.mission_name}</h3>
                             <p className="flightlist__details">{flight.details}</p>
@@ -49,13 +51,12 @@ const FlightList = ({ flights }) => {
                         <div className="flightlist__item-bottom">
                             <Link to={`/flights/${flight.flight_number}`} className="flightlist__link">More Details</Link>
                         </div>
-                        <PopupCloud text="Sad je Andjela sokirana sto resize radi i bez bootstrapa xD" />
                     </div>
                 ))}
             </InfiniteScroll>
-            {showLoader && <Loader />}
+            {error && <p>{error}</p>}
         </div>
-    );
+    )
 }
 
-export default FlightList;
+export default FlightList2;
